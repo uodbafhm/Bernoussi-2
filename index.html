@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cabinet Dentaire Almadar | Dr GASSABI Khaoula</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
     <style>
         :root {
             --primary-color: #0d47a1;
@@ -22,19 +23,30 @@
 
         /* Navbar Custom */
         .navbar { background: white; box-shadow: 0 2px 15px rgba(0,0,0,0.1); padding: 15px 0; }
-        .btn-brand { background: var(--primary-color); color: white; border-radius: 25px; padding: 10px 25px; transition: 0.3s; border: none; }
+        .btn-brand { background: var(--primary-color); color: white; border-radius: 25px; padding: 10px 25px; transition: 0.3s; border: none; text-decoration: none; display: inline-block; }
         .btn-brand:hover { background: var(--secondary-color); color: white; transform: translateY(-2px); }
 
-        /* Hero Section with YOUR Image */
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(13, 71, 161, 0.6), rgba(0, 0, 0, 0.4)), 
                         url('https://i.postimg.cc/kg47CpJ4/imgi-33-49985483-770212830003424-6739412678191076416-n.jpg');
             background-size: cover; 
             background-position: center;
-            height: 90vh; 
+            min-height: 90vh; 
             display: flex; 
             align-items: center; 
             color: white;
+            padding: 60px 0;
+        }
+
+        /* Responsive Hero & Typography */
+        @media (max-width: 768px) {
+            .hero { text-align: center; height: auto; padding: 100px 0 60px 0; }
+            .hero h1 { font-size: 2.2rem !important; }
+            .hero h4 { font-size: 1rem !important; }
+            .hero .d-flex { flex-direction: column; gap: 15px !important; }
+            .hero .btn { width: 100%; max-width: 300px; margin: 0 auto; }
+            .section { padding: 50px 0; }
         }
 
         /* Sections */
@@ -51,214 +63,194 @@
         .testimonial-card:hover { transform: translateY(-10px); border-color: var(--primary-color); }
         .form-control, .form-select { border-radius: 10px; padding: 12px; border: 1px solid #ddd; }
 
-        /* Contact & Map */
-        .map-embed { border-radius: 15px; overflow: hidden; }
-        .contact-icon { color: var(--secondary-color); font-size: 1.5rem; margin-right: 15px; }
+        /* Map Fix */
+        .map-embed { border-radius: 15px; overflow: hidden; width: 100%; }
+        .map-embed iframe { width: 100% !important; height: 350px; }
 
         footer { background: #1a252f; color: white; padding: 40px 0; }
     </style>
-  <link rel="icon" type="image/png" href="favicon1.png">
-  <link rel="apple-touch-icon" href="favicon1.png">
-  <link rel="shortcut icon" href="favicon1.png">
-
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#">ALMADAR <span class="text-dark">DENT</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link px-3" href="#home">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#testimonials">Avis</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#contact">Contact</a></li>
-                    <li class="nav-item ms-lg-3"><a class="btn btn-brand" href="#appointment">Prendre RDV</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#">ALMADAR <span class="text-dark">DENT</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link px-3" href="#home">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="#testimonials">Avis</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="#contact">Contact</a></li>
+            <li class="nav-item ms-lg-3"><a class="btn btn-brand" href="#appointment">Prendre RDV</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <header class="hero" id="home">
-        <div class="container text-center text-lg-start">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h4 class="text-uppercase fw-bold mb-3" style="color: var(--accent-color); text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Bienvenue chez Dr GASSABI Khaoula</h4>
-                    <h1 class="display-3 fw-bold mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Cabinet Dentaire Almadar</h1>
-                    <p class="lead mb-5 fw-medium">Votre sourire est notre priorité. Une technologie de pointe et des soins personnalisés au cœur de Casablanca.</p>
-                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
-                        <a href="#appointment" class="btn btn-brand btn-lg">Réserver Maintenant</a>
-                        <a href="tel:0522734341" class="btn btn-outline-light btn-lg rounded-pill"><i class="bi bi-telephone"></i> 05 22 73 43 41</a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h4 class="text-uppercase fw-bold mb-3" style="color: var(--accent-color); text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+              Bienvenue chez Dr GASSABI Khaoula
+            </h4>
+            <h1 class="display-3 fw-bold mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+              Cabinet Dentaire Almadar
+            </h1>
+            <p class="lead mb-5 fw-medium">
+              Votre sourire est notre priorité. Une technologie de pointe et des soins personnalisés au cœur de Casablanca.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#appointment" class="btn btn-brand btn-lg">Réserver Maintenant</a>
+              <a href="tel:0522734341" class="btn btn-outline-light btn-lg rounded-pill">
+                <i class="bi bi-telephone"></i> 05 22 73 43 41
+              </a>
             </div>
+          </div>
         </div>
+      </div>
     </header>
 
     <section class="section border-bottom">
-        <div class="container text-center">
-            <div class="row g-4">
-                <div class="col-md-3">
-                    <i class="bi bi-shield-check display-4 text-primary"></i>
-                    <h5 class="mt-3 fw-bold">Qualité Garantie</h5>
-                </div>
-                <div class="col-md-3">
-                    <i class="bi bi-clock-history display-4 text-primary"></i>
-                    <h5 class="mt-3 fw-bold">Horaires Flexibles</h5>
-                </div>
-                <div class="col-md-3">
-                    <i class="bi bi-person-heart display-4 text-primary"></i>
-                    <h5 class="mt-3 fw-bold">Soins Doux</h5>
-                </div>
-                <div class="col-md-3">
-                    <i class="bi bi-geo-alt display-4 text-primary"></i>
-                    <h5 class="mt-3 fw-bold">Casablanca</h5>
-                </div>
-            </div>
+      <div class="container text-center">
+        <div class="row g-4">
+          <div class="col-6 col-md-3">
+            <i class="bi bi-shield-check display-4 text-primary"></i>
+            <h5 class="mt-3 fw-bold">Qualité Garantie</h5>
+          </div>
+          <div class="col-6 col-md-3">
+            <i class="bi bi-clock-history display-4 text-primary"></i>
+            <h5 class="mt-3 fw-bold">Horaires Flexibles</h5>
+          </div>
+          <div class="col-6 col-md-3">
+            <i class="bi bi-person-heart display-4 text-primary"></i>
+            <h5 class="mt-3 fw-bold">Soins Doux</h5>
+          </div>
+          <div class="col-6 col-md-3">
+            <i class="bi bi-geo-alt display-4 text-primary"></i>
+            <h5 class="mt-3 fw-bold">Casablanca</h5>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="section section-bg" id="testimonials">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2>Témoignages</h2>
-                <p>Ce que disent nos patients</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="p-4 testimonial-card h-100 text-center">
-                        <p class="text-muted italic">"Cabinet Almadar bzzaf zwin khdemt m3ahom w l’équipe kat3amel b ihtiram w rahat"</p>
-                        <strong class="d-block mt-3 text-primary">— Amina El Amrani.</strong>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 testimonial-card h-100 text-center" dir="rtl">
-                        <p class="text-muted">"عيادة حديثة ونظيفة والمعدات متطورة شعرت بالاطمئنان منذ أول زيارة "</p>
-                        <strong class="d-block mt-3 text-primary" dir="ltr">— Salma Rachidi.</strong>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 testimonial-card h-100 text-center" dir="rtl">
-                        <p class="text-muted">"استقبال جيد وخدمة مهنية لم أشعر بأي ألم أثناء العلاج وأنصح به بشدة"</p>
-                        <strong class="d-block mt-3 text-primary" dir="ltr">— يوسف بنعلي.</strong>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title text-center">
+          <h2>Témoignages</h2>
+          <p>Ce que disent nos patients</p>
         </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="p-4 testimonial-card h-100 text-center">
+              <p class="text-muted italic">"Cabinet Almadar bzzaf zwin khdemt m3ahom w l’équipe kat3amel b ihtiram w rahat"</p>
+              <strong class="d-block mt-3 text-primary">— Amina El Amrani</strong>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 testimonial-card h-100 text-center" dir="rtl">
+              <p class="text-muted">"عيادة حديثة ونظيفة والمعدات متطورة شعرت بالاطمئنان منذ أول زيارة "</p>
+              <strong class="d-block mt-3 text-primary" dir="ltr">— Salma Rachidi</strong>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 testimonial-card h-100 text-center" dir="rtl">
+              <p class="text-muted">"استقبال جيد وخدمة مهنية لم أشعر بأي ألم أثناء العلاج وأنصح به بشدة"</p>
+              <strong class="d-block mt-3 text-primary" dir="ltr">— يوسف بنعلي</strong>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="appointment">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2>Réserver un rendez-vous</h2>
-                <p>Remplissez le formulaire et notre équipe vous contactera rapidement.</p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="p-5 form-card">
-                        <form id="appointmentForm">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Nom" id="nom" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Prénom" id="prenom" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="tel" class="form-control" placeholder="Numéro de téléphone" id="phone" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="date" class="form-control" id="date" required>
-                                </div>
-                                <div class="col-12">
-                                    <select class="form-select" id="service" required>
-                                        <option value="">Sélectionner un service</option>
-                                        <option>Nettoyage des dents</option>
-                                        <option>Blanchiment des dents</option>
-                                        <option>Implants dentaires</option>
-                                        <option>Appareils dentaires et orthodontie</option>
-                                        <option>Soins restaurateurs</option>
-                                        <option>Dentisterie d'urgence</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control" id="message" rows="3" placeholder="Notes supplémentaires"></textarea>
-                                </div>
-                                <div class="col-12 text-center">
-                                    <button type="button" class="btn btn-brand btn-lg" onclick="sendWhatsApp()">
-                                        <i class="bi bi-calendar2-check me-1"></i> Soumettre le rendez-vous
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                        <div id="formMessage" class="mt-3 text-center small text-success" style="display:none;">
-                            Merci ! Votre demande a été envoyée.
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title text-center">
+          <h2>Réserver un rendez-vous</h2>
+          <p>Remplissez le formulaire et notre équipe vous contactera rapidement.</p>
         </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="p-4 p-md-5 form-card">
+              <form id="appointmentForm">
+                <div class="row g-3">
+                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Nom" id="nom" required /></div>
+                  <div class="col-md-6"><input type="text" class="form-control" placeholder="Prénom" id="prenom" required /></div>
+                  <div class="col-md-6"><input type="tel" class="form-control" placeholder="Numéro de téléphone" id="phone" required /></div>
+                  <div class="col-md-6"><input type="date" class="form-control" id="date" required /></div>
+                  <div class="col-12">
+                    <select class="form-select" id="service" required>
+                      <option value="">Sélectionner un service</option>
+                      <option>Nettoyage des dents</option>
+                      <option>Blanchiment des dents</option>
+                      <option>Implants dentaires</option>
+                      <option>Appareils dentaires</option>
+                    </select>
+                  </div>
+                  <div class="col-12"><textarea class="form-control" id="message" rows="3" placeholder="Notes supplémentaires"></textarea></div>
+                  <div class="col-12 text-center">
+                    <button type="button" class="btn btn-brand btn-lg w-100" onclick="sendWhatsApp()">
+                      <i class="bi bi-calendar2-check me-1"></i> Soumettre
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <div id="formMessage" class="mt-3 text-center small text-success" style="display:none;">Merci ! Votre demande a été envoyée.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section section-bg" id="contact">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2>Contactez-nous</h2>
-                <p>Visitez ou contactez le Cabinet Almadar</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="p-4 feature-card h-100">
-                        <h5 class="fw-bold mb-3">Notre emplacement</h5>
-                        <div class="map-embed mb-3">
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4962.147750885798!2d-7.50198631130555!3d33.61354932458264!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cb2c9f992eeb%3A0xfed8b72cf5824b55!2sCabinet%20dentaire%20Almadar%20dr%20GASSABI%20Khaoula!5e0!3m2!1sen!2sma!4v1769003842287!5m2!1sen!2sma" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                        </div>
-                        <p class="mb-2"><i class="bi bi-geo-alt-fill text-primary me-2"></i> Numéro 1, Bloc 4 Boulevard Ghadaoui Abass, Casablanca 20250</p>
-                        <p class="mb-2"><i class="bi bi-telephone-fill text-primary me-2"></i> 05 22 73 43 41</p>
-                        <p class="mb-0"><i class="bi bi-clock-fill text-primary me-2"></i> Ouvert • Ferme à 16:00</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="p-4 form-card h-100">
-                        <h5 class="fw-bold mb-3">Envoyez-nous un message</h5>
-                        <form id="contactForm">
-                            <div class="mb-3"><input type="text" class="form-control" placeholder="Votre nom" required></div>
-                            <div class="mb-3"><input type="email" class="form-control" placeholder="Votre e-mail" required></div>
-                            <div class="mb-3"><textarea class="form-control" rows="5" placeholder="Votre message" required></textarea></div>
-                            <button type="submit" class="btn btn-brand w-100">Envoyer</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title text-center">
+          <h2>Contactez-nous</h2>
         </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="p-4 feature-card h-100">
+              <h5 class="fw-bold mb-3">Notre emplacement</h5>
+              <div class="map-embed mb-3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.460833159!2d-7.589!3d33.573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM0JzIyLjgiTiA3wrAzNScyMC40Ilc!5e0!3m2!1sfr!2sma!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+              <p><i class="bi bi-geo-alt-fill text-primary me-2"></i> Numéro 1, Bloc 4 Boulevard Ghadaoui Abass, Casablanca</p>
+              <p><i class="bi bi-telephone-fill text-primary me-2"></i> 05 22 73 43 41</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="p-4 form-card h-100">
+              <h5 class="fw-bold mb-3">Envoyez-nous un message</h5>
+              <form>
+                <div class="mb-3"><input type="text" class="form-control" placeholder="Votre nom" required /></div>
+                <div class="mb-3"><input type="email" class="form-control" placeholder="Votre e-mail" required /></div>
+                <div class="mb-3"><textarea class="form-control" rows="5" placeholder="Votre message" required></textarea></div>
+                <button type="submit" class="btn btn-brand w-100">Envoyer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer class="text-center">
-        <div class="container">
-            <p class="mb-0">© 2026 Cabinet Dentaire Almadar - Dr GASSABI Khaoula. Tous droits réservés.</p>
-        </div>
+      <div class="container">
+        <p class="mb-0">© 2026 Cabinet Dentaire Almadar - Dr GASSABI Khaoula.</p>
+      </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // WhatsApp Function
         function sendWhatsApp() {
             const nom = $('#nom').val();
-            const prenom = $('#prenom').val();
             const phone = $('#phone').val();
             const date = $('#date').val();
-            const service = $('#service').val();
-            const message = $('#message').val();
-
-            if(!nom || !phone || !date) {
-                alert("Veuillez remplir les champs obligatoires.");
-                return;
-            }
-
-            const text = `Bonjour Cabinet Almadar, Je souhaite un RDV:%0A- Nom: ${nom} ${prenom}%0A- Tél: ${phone}%0A- Date: ${date}%0A- Service: ${service}%0A- Note: ${message}`;
-            window.open(`https://wa.me/212522734341?text=${text}`, '_blank');
-            $('#formMessage').show();
+            if(!nom || !phone || !date) { alert("Veuillez remplir les champs."); return; }
+            const text = `Bonjour Cabinet Almadar, RDV pour: ${nom}, Tél: ${phone}, Date: ${date}`;
+            window.open(`https://wa.me/212522734341?text=${encodeURIComponent(text)}`, '_blank');
         }
 
         // Smooth Scroll
@@ -266,9 +258,7 @@
             var target = $(this.getAttribute('href'));
             if( target.length ) {
                 event.preventDefault();
-                $('html, body').stop().animate({
-                    scrollTop: target.offset().top - 80
-                }, 1000);
+                $('html, body').stop().animate({ scrollTop: target.offset().top - 80 }, 800);
             }
         });
     </script>
