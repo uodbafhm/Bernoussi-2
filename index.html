@@ -69,9 +69,10 @@
 
         footer { background: #1a252f; color: white; padding: 40px 0; }
     </style>
-      <link rel="icon" type="image/png" href="favicon1.png">
-      <link rel="apple-touch-icon" href="favicon1.png">
-      <link rel="shortcut icon" href="favicon1.png">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
 </head>
 <body>
 
@@ -226,11 +227,11 @@
           <div class="col-lg-6">
             <div class="p-4 form-card h-100">
               <h5 class="fw-bold mb-3">Envoyez-nous un message</h5>
-              <form>
-                <div class="mb-3"><input type="text" class="form-control" placeholder="Votre nom" required /></div>
-                <div class="mb-3"><input type="email" class="form-control" placeholder="Votre e-mail" required /></div>
-                <div class="mb-3"><textarea class="form-control" rows="5" placeholder="Votre message" required></textarea></div>
-                <button type="submit" class="btn btn-brand w-100">Envoyer</button>
+              <form id="contactWhatsAppForm">
+                <div class="mb-3"><input type="text" id="contactNom" class="form-control" placeholder="Votre nom" required /></div>
+                <div class="mb-3"><input type="email" id="contactEmail" class="form-control" placeholder="Votre e-mail" required /></div>
+                <div class="mb-3"><textarea id="contactMsg" class="form-control" rows="5" placeholder="Votre message" required></textarea></div>
+                <button type="button" class="btn btn-brand w-100" onclick="sendContactToWhatsApp()">Envoyer</button>
               </form>
             </div>
           </div>
@@ -253,7 +254,22 @@
             const date = $('#date').val();
             if(!nom || !phone || !date) { alert("Veuillez remplir les champs."); return; }
             const text = `Bonjour Cabinet Almadar, RDV pour: ${nom}, Tél: ${phone}, Date: ${date}`;
-            window.open(`https://wa.me/212522734341?text=${encodeURIComponent(text)}`, '_blank');
+            window.open(`https://wa.me/212643587891?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // Nouvelle fonction pour le formulaire de contact
+        function sendContactToWhatsApp() {
+            const nom = $('#contactNom').val();
+            const email = $('#contactEmail').val();
+            const message = $('#contactMsg').val();
+
+            if(!nom || !email || !message) { 
+                alert("Veuillez remplir tous les champs."); 
+                return; 
+            }
+
+            const text = `Bonjour, je suis ${nom} (${email}). Message: ${message}`;
+            window.open(`https://wa.me/212643587891?text=${encodeURIComponent(text)}`, '_blank');
         }
 
         // Smooth Scroll
